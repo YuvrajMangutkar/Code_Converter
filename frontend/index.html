@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Code Converter ✨</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-2"></div>
+    <div class="blob-bg blob-3"></div>
+
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">✨</div>
+                <h1>Nexus <span class="gradient-text">Converter</span></h1>
+            </div>
+            <p class="subtitle">Transform code across languages instantly with AI.</p>
+        </header>
+
+        <main class="converter-layout">
+            <!-- Source Editor Column -->
+            <div class="editor-pane source-pane">
+                <div class="pane-header">
+                    <label for="source-lang">Source Language</label>
+                    <select id="source-lang" class="custom-select">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="csharp">C#</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="swift">Swift</option>
+                    </select>
+                </div>
+                <div class="editor-container glass-panel">
+                    <textarea id="source-editor" class="code-textarea" spellcheck="false" placeholder="Paste or type your source code here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Controls (Middle) -->
+            <div class="controls-pane">
+                <button id="convert-btn" class="glow-button">
+                    <span class="btn-text">Convert</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div id="loading-indicator" class="loader hidden">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+
+            <!-- Target Editor Column -->
+            <div class="editor-pane target-pane">
+                <div class="pane-header">
+                    <label for="target-lang">Target Language</label>
+                    <select id="target-lang" class="custom-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="csharp">C#</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="swift">Swift</option>
+                    </select>
+                </div>
+                <div class="editor-container glass-panel">
+                    <textarea id="target-editor" class="code-textarea" spellcheck="false" readonly placeholder="Converted code will appear here..."></textarea>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Made for College Students. Powered by FastAPI & AI</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
