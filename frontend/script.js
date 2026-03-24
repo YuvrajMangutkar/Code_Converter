@@ -23,7 +23,7 @@ sourceLangSelect.addEventListener('change', (e) => {
 // Conversion Logic
 const convertBtn = document.getElementById('convert-btn');
 const loadingIndicator = document.getElementById('loading-indicator');
-const API_URL = 'http://localhost:8000/api/convert';
+const API_URL = '/api/convert';
 
 convertBtn.addEventListener('click', async () => {
     const sourceCode = sourceEditor.value;
@@ -64,7 +64,7 @@ convertBtn.addEventListener('click', async () => {
 
     } catch (error) {
         console.error("Conversion failed:", error);
-        targetEditor.value = "// Error during conversion:\n// " + error.message + "\n// Ensure the FastAPI backend is running on localhost:8000";
+        targetEditor.value = "// Error during conversion:\n// " + error.message + "\n// Ensure the backend API is reachable.";
     } finally {
         // Reset UI Feedback
         loadingIndicator.classList.add('hidden');
